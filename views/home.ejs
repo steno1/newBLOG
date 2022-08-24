@@ -1,0 +1,33 @@
+<%-include("partials/header")%>
+
+<body>
+    <h1>Home</h1>
+    <p><%=startingContent%></p>
+    <% posting.forEach(function(post){%>
+    <h2><%=post.Title%></h2>
+    <p><%=post.Content.substring(0, 10)+" ..."%></p>
+    <a href="/<%=post.Title%>"> Read more</a><hr>
+    <% })%>
+
+
+    <h1>Comment Section</h1>
+    <form action="/compose" method="POST">
+        <div class="form-group">
+            <label for="">Title</label>
+            <input class="form-control" type="text" name="steno" placeholder="write here" >
+            <label for="">Post</label>
+            <textarea class="form-control"  name="postTitle" id="" cols="30" rows="10"></textarea>
+            
+        </div>
+        <button class="btn btn-primary" type="submit"> Publish</button>
+    
+    </form>
+
+
+
+    
+</body>
+
+<%-include("partials/footer")%> 
+</html>
+
